@@ -1,0 +1,37 @@
+{
+  "name": "elasticsearch-monitor",
+  "version": "1.0.0",
+  "description": "Get node data of an Elasticsearch cluster and publish metrics to Cloudwatch",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test"
+  },
+  "keywords": [
+    "elasticsearch",
+    "monitoring",
+    "performance",
+    "nodes",
+    "cloudwatch",
+    "aws"
+  ],
+  "author": "muhammad.umer",
+  "dependencies": {
+    "angular": "^1.6.7",
+    "async": "^2.6.0",
+    "aws-sdk": "^2.165.0",
+    "body-parser": "^1.14.1",
+    "compression": "^1.6.0",
+    "dotenv": "^1.2.0",
+    "elasticsearch": "^14.0.0",
+    "express": "^4.13.3",
+    "morgan": "^1.6.1",
+    "mysql": "^2.13.0",
+    "request": "^2.83.0",
+    "request-promise": "^4.2.2"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.2.0",
+    "sinon": "^2.1.0"
+  }
+}
