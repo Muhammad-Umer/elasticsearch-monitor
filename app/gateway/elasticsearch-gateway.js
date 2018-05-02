@@ -15,20 +15,7 @@ exports.getNodesStatusFromCluster = (clusterName, requiredStats) => {
         uri: baseURL + nodesStats + "/" + requiredStats.join()
     };
 
-    return rp(options);/*
-    return new Promise((resolve, reject) => {
-        rp(options)
-            .then(function (parsedBody) {
-                // POST succeeded...
-                resolve(parsedBody);
-            })
-            .catch(function (err) {
-                // POST failed...
-                console.log(err);
-                reject(err);
-            });
-    });
-*/
+    return rp(options);
 };
 
 exports.getNodeHealth = (clusterName) => {
@@ -40,17 +27,4 @@ exports.getNodeHealth = (clusterName) => {
     };
 
     return rp(options);
-
-    /*return new Promise((resolve, reject) => {
-        rp(options)
-            .then(function (parsedBody) {
-                // POST succeeded...
-                resolve(parsedBody);
-            })
-            .catch(function (err) {
-                // POST failed...
-                console.log(err);
-                reject(err);
-            });
-    });*/
 };
