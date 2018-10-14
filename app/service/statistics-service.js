@@ -109,9 +109,47 @@ exports.getFileSystemStatistics = (nodes) => {
 exports.getBreakersStatistics = (nodes) => {
     let breakers = {};
 
-    //TODO: complete Breakers
-    
-    return breakers;
+    breakers.request = {};
+    breakers.request.limitSizeInBytes = nodes[key].breaker.request.limit_size_in_bytes;
+    breakers.request.limitSize = nodes[key].breaker.request.limit_size;
+    breakers.request.estimatedSizeInBytes = nodes[key].breaker.request.estimated_size_in_bytes;
+    breakers.request.estimatedSize = nodes[key].breaker.request.estimated_size;
+    breakers.request.overhead = nodes[key].breaker.request.overhead;
+    breakers.request.tripped = nodes[key].breaker.request.tripped;
+
+    breakers.fieldData = {};
+    breakers.fieldData.limitSizeInBytes = nodes[key].breaker.fieldData.limit_size_in_bytes;
+    breakers.fieldData.limitSize = nodes[key].breaker.fieldData.limit_size;
+    breakers.fieldData.estimatedSizeInBytes = nodes[key].fieldData.request.estimated_size_in_bytes;
+    breakers.fieldData.estimatedSize = nodes[key].fieldData.request.estimated_size;
+    breakers.fieldData.overhead = nodes[key].fieldData.request.overhead;
+    breakers.fieldData.tripped = nodes[key].fieldData.request.tripped;
+
+    breakers.inFlightRequests = {};
+    breakers.inFlightRequests.limitSizeInBytes = nodes[key].breaker.inFlightRequests.limit_size_in_bytes;
+    breakers.inFlightRequests.limitSize = nodes[key].breaker.inFlightRequests.limit_size;
+    breakers.inFlightRequests.estimatedSizeInBytes = nodes[key].inFlightRequests.request.estimated_size_in_bytes;
+    breakers.inFlightRequests.estimatedSize = nodes[key].inFlightRequests.request.estimated_size;
+    breakers.inFlightRequests.overhead = nodes[key].inFlightRequests.request.overhead;
+    breakers.inFlightRequests.tripped = nodes[key].inFlightRequests.request.tripped;
+
+    breakers.accounting = {};
+    breakers.accounting.limitSizeInBytes = nodes[key].breaker.accounting.limit_size_in_bytes;
+    breakers.accounting.limitSize = nodes[key].breaker.accounting.limit_size;
+    breakers.accounting.estimatedSizeInBytes = nodes[key].accounting.request.estimated_size_in_bytes;
+    breakers.accounting.estimatedSize = nodes[key].accounting.request.estimated_size;
+    breakers.accounting.overhead = nodes[key].accounting.request.overhead;
+    breakers.accounting.tripped = nodes[key].accounting.request.tripped;
+
+    breakers.parent = {};
+    breakers.parent.limitSizeInBytes = nodes[key].breaker.parent.limit_size_in_bytes;
+    breakers.parent.limitSize = nodes[key].breaker.parent.limit_size;
+    breakers.parent.estimatedSizeInBytes = nodes[key].parent.request.estimated_size_in_bytes;
+    breakers.parent.estimatedSize = nodes[key].parent.request.estimated_size;
+    breakers.parent.overhead = nodes[key].parent.request.overhead;
+    breakers.parent.tripped = nodes[key].parent.request.tripped;
+
+    return breaker;
 };
 
 exports.getScriptsStatistics = (nodes) => {
