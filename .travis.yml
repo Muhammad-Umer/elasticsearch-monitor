@@ -6,7 +6,7 @@ node_js:
   - "7"
   - "6"
 before_install:
-  - npm i -g npm@version-number
+  - npm update -q
 cache:
   directories:
     - "node_modules"
