@@ -7,6 +7,8 @@ node_js:
   - "6"
 before_install:
   - npm update -q
+install:
+  - rm -f package-lock.json && npm install
 cache:
   directories:
     - "node_modules"
