@@ -20,6 +20,7 @@ module.exports = {
             }
         }
     },
+    stats: "os, fs, mem",
     server: {
         port: 2000
     },
