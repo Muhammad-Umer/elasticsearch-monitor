@@ -94,6 +94,12 @@ exports.getThreadPoolStatistics = (nodes) => {
 
 exports.getFileSystemStatistics = (nodes) => {
     let fs = {};
+    fs.timestamp = nodes[key].fs.timestamp;
+
+    fs.total = {};
+    fs.total.totalInBytes = nodes[key].fs.total.total_in_bytes;
+    fs.total.freeInBytes = nodes[key].fs.total.free_in_bytes;
+    fs.total.availableInBytes = nodes[key].fs.total.available_in_bytes;
 
     //TODO: complete fs
 
