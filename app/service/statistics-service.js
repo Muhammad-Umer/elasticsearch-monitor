@@ -64,9 +64,20 @@ exports.getIndicesStatistics = (nodes) => {
     indices.docs = {};
     indices.docs.count = nodes[key].indices.docs.count;
     indices.docs.deleted = nodes[key].indices.docs.deleted;
+
     indices.store = {};
     indices.store.sizeInBytes = nodes[key].indices.store.size_in_bytes;
     indices.store.throttleTimeInMillis = nodes[key].indices.store.throttle_time_in_millis;
+    indices.indexing.indexTotal = nodes[key].indices.indexing.index_total;
+
+    indices.indexing = {};
+    indices.indexing.indexTimeInMillis = nodes[key].indices.indexing.index_time_in_millis;
+    indices.indexing.indexCurrent = nodes[key].indices.indexing.index_current;
+    indices.indexing.deleteTotal = nodes[key].indices.indexing.delete_total;
+    indices.indexing.deleteTimeInMillis = nodes[key].indices.indexing.delete_time_in_millis;
+    indices.indexing.noopUpdateTotal = nodes[key].indices.indexing.noop_update_total;
+    indices.indexing.isThrottled = nodes[key].indices.indexing.is_throttled;
+    indices.indexing.throttleTimeInMillis = nodes[key].indices.indexing.throttle_time_in_millis;
 
     //TODO: complete Indices
 
